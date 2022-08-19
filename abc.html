@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<head>
+
+</head>
+<body>
+
+<script>
+    var count=0
+class student{
+    constructor(name,age,marks,phno){
+        window.count+=1
+        this.age=age
+        this.marks=marks
+        this.name=name
+        this.phno=phno
+    }
+}
+function checkeligible(marks){
+ if(marks>40){
+    console.log("ELigible")
+ }
+ else{
+    console.log("not eligible")
+ }
+}
+var eligibilityforplacements= (marks)=>{if(marks>40){
+    console.log("ELigible")
+ }
+ else{
+    console.log("not eligible")
+ }}
+
+
+var companyeligibility=(marks,age)=>{if(marks>40 && age>18){
+    console.log("ELigible")
+ }
+ else{
+    console.log("not eligible")
+ }}
+ 
+var s1=new student("a",21,123,9090)
+var s2=new student("ab",12,113,9090)
+var s3=new student("abc",12,23,9090)
+var s4=new student("b",21,106,9090)
+var s5=new student("bc",12,104,9090)
+console.log(count)
+companyeligibility(s1.marks,s1.age)
+eligibilityforplacements(s2.marks)
+</script>
+</body>
+</html>

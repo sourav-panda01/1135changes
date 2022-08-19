@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<h1 style="text-align:center; background: blue;">Expense Tracker</h1>
+</head>
+<body>
+<br><br>
+<form id="myform" style="text-align:center;" onsubmit="getdata(event)">
+    <h2>Add Expense</h2>
+    <label>Name Of Expense:</label>
+    <input id="name" type="text">
+    <br><br>
+    <label>Email:</label><input id="email" type="email">
+    <br><br>
+    <label>Purpose:</label><input id="purpose" type="text">
+    <br><br>
+    <label>Amount:</label><input type="text" id="amt">
+    <input type="submit" value="submit" >
+</form>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.get('https://crudcrud.com/api/19f0bcb62b4c47a9ab44f6176f6bba6d/users', {transformRequest: (data, headers) => {
+    delete headers.common['Authorization'];
+  }
+});
+</script>
+<script src="crud.js"></script>
+<script>
+// function getdata(e){
+//     e.preventDefault()
+    
+//     email=document.getElementById('email').value
+//     var myobj={name:names,email:email}
+//     localStorage.setItem("myobj"+i,JSON.stringify(myobj));
+//     i++;
+// };
+</script>
+</body>
+</html>

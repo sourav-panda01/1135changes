@@ -1,0 +1,54 @@
+<script>
+    class Queue{
+        q=[]
+        constructor(front,size,rear){
+            this.front=front
+            this.size=size
+            this.rear=rear
+        }
+        isfull(q){
+            return (this.front==this.size)
+        }
+        enqueue(val){
+            if(isfull(this.q)){
+                console.log("Queue is full")
+            }
+            else{
+                q[rear]=val
+            }
+        }
+        dequeue(){
+            if(queue.isempty()){
+                console.log("queue is empty")
+            }
+            else{
+                val=q[front]
+                front++;
+                return val
+            }
+        }
+    }
+    q1=new Queue();
+    q2=new Queue();
+    q1.enqueue(5)
+    //s1.pushstack(eneque into q1 )
+    //s1.popstack(pop from q1 into q2 till last element return last element copy data into q1 then)
+
+
+
+    //push stack
+    q1.eneque(val)
+    //pop stack
+    while(!q1.isempty){
+        val=q1.dequeue
+        if(q1.isempty){
+            return val
+        }
+        q2.eneque(val);
+        //copy q2 to q1
+        while(!q2.isempty){
+            q1.eneque(q2.dequeue)
+        }
+
+    }
+</script>

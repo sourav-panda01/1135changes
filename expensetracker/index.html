@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+<h1 style="text-align:center; background: blue;">Expense Tracker</h1>
+</head>
+<body>
+<br><br>
+
+
+
+
+<div id="newDiv">
+</div>
+<p id="paragraph"></p>
+<form id="postform" style="text-align:center" onsubmit="postform(event)">
+    <h2>Add Expense</h2>
+
+    
+    <label>Name Of Expense:</label>
+    <input id="name" type="text">
+    <br><br>
+    <label>Email:</label><input id="email" type="email">
+    <br><br>
+    <label>Purpose:</label><input id="purpose" type="text">
+    <br><br>
+    <label>Amount:</label><input type="text" id="amt">
+    <input type="submit" value="post data" >
+</form>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="js-script.js"></script>
+<script>
+
+</script>
+</body>
+</html>

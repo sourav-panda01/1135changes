@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+
+    
+</head>
+<body>
+    <label style:align-center>Enter number of element in stack </label>
+    <input type="text" id="total">
+    <button id="btn">Enter total number</button>
+    <div id="newDiv">
+
+    </div>
+
+    <script>
+        class Mystack{
+	constructor(s)
+	{
+		this.maxsize=s;
+		this.top=-1;
+        this.a=[]
+	}
+	push(t){
+        this.top+=1
+		this.a[top] = t;
+	}
+	pop(){
+		return this.a[this.top--];
+	}
+	peek(){
+		return this.a[this.top];
+	}
+	isEmpty(){
+		return (this.top == -1);
+	}
+	isFull(){
+		return (this.top == maxSize - 1);  
+	}
+}
+theStack=new Mystack(5);
+theStack.push(10);
+theStack.push(20);
+theStack.push(30);
+theStack.push(40);
+theStack.push(50);
+theStack.peek();
+while(!theStack.isEmpty()){
+   var value = theStack.pop();
+   console.log(value);
+   console.log.print(" ");
+}
+
+
+        var btn=document.getElementById("btn");
+        var minbtn=document.createElement("input");
+        var divElement=document.getElementById("newDiv")
+        minbtn.setAttribute("value","Get Minimun")
+        minbtn.setAttribute("type","button")
+        divElement.appendChild(minbtn)
+        minbtn.addEventListener("click",getmin())
+        function getmin(){
+            var min=stack.pop();
+            // while(!stack.isEmpty()){
+            //     s=stack.pop()
+            //     if(min>s){
+            //         min=s
+            //     }
+            // }
+            var para=document.createElement('p');
+            var dataenter=document.createTextNode("Minimum is",min);
+            para.appendChild(dataenter);
+            divElement.appendChild(para);
+
+        }
+            
+        var total_element=document.getElementById("total").value;
+        btn.addEventListener("click",()=>operation(total_element))
+        function operation(total_element){
+            console.log(total_element)
+            for(let i=0;i<total_element;i++){
+                
+                var para=document.createElement('p');
+                var dataenter=document.createTextNode("Enter Elements");
+                var inputbox=document.createElement('input');
+                inputbox.setAttribute("type","number")
+                para.appendChild(dataenter);
+                divElement.appendChild(para);    
+                alert(EnterValue)
+                stack.push(data)
+            }
+        }
+    </script>
+</body></html>

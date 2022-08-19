@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<head>
+</head>
+<body>
+<script>
+var count=0
+class node{
+    constructor(data){
+        window.count+=1
+        this.data=data
+        this.right=null
+        this.left=null
+    }
+}
+function insertNode(root,newNode){
+    if(root==null){
+        root=newNode
+        console.log("Data Entered")
+    }
+    if(root.data>newNode.data){
+        if(root.left==null){
+            root.left=newNode;
+            return
+        }
+        else{
+            insertNode(root.left,newNode)
+        }
+        
+    }
+    if(root.data<newNode.data){
+        if(root.right==null){
+            root.right=newNode;
+            return
+        }
+        else{
+            insertNode(root.right,newNode)
+        }
+    }
+}
+var searchnode= (value,root)=>{
+if(root.data==value){
+    console.log("Value Found")
+    return true
+}
+ else if(root.data<value){
+    searchnode(value,root.right)
+}
+else if(root.data>value){
+    searchnode(value,root.left)
+
+}} 
+function preorder(root){
+    if(root!=null){
+        console.log(root.data)
+        preorder(root.left)
+        preorder(root.right)
+    }
+}
+function preorderiteration(root){
+    var rootstack=[]
+    rootstack.push(root)
+    while(rootstack!=null){
+        var p=rootstack.pop()
+        console.log(p.data)
+        if(p.right!=null)
+            rootstack.push(p.right)
+        if(p.left!=null)
+            rootstack.push(p.left)
+    }
+}
+function min(root){
+    while(root.left!=null){
+        root=root.left
+    }
+    console.log("Minimum is",root.data)
+
+}
+function max(root){
+    while(root.right!=null){
+        root=root.right
+    }
+    console.log("Maximum is",root.data)
+}
+var root=new node(9090)
+var s=root
+var n1=new node(113)
+var n2=new node(9999)
+var n3=new node(111)
+var n4=new node(84254)
+insertNode(root,n1)
+insertNode(root,n2)
+insertNode(root,n3)
+insertNode(root,n4)
+min(root)
+max(root)
+
+preorder(root)
+//preorderiteration(root)
+function storeInorder(root,arr)
+{
+    if (root == null)
+        return
+    storeInorder(root.left, arr)
+    arr.push(root.val)
+    storeInorder(root.right, arr)
+}
+function isBST(root)
+{
+    var arr=[]   // Auxiliary array to store inorder 
+    storeInorder(root, arr) // Traverses the array in inorder fashion and stores the result in arr
+    // Lets check if arr is in sorted order or not
+    for(i = 1;i< arr.length-1;i++){
+        if (arr[i] < arr[i-1])
+            return false 
+        return true
+    }
+}
+var s=isBST(root);
+console.log("IS it a BST",s)
+
+</script>
+</body>
+</html>

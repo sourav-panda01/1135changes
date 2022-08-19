@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<head>
+</head>
+<body>
+<script>
+var count=0
+var a1=[]
+var a2=[]
+var result=[]
+class node{
+    constructor(data){
+        this.data=data
+        this.right=null
+        this.left=null
+    }
+}
+function insertNode(root,newNode){
+    if(root==null){
+        root=newNode
+        console.log("Data Entered")
+    }
+    if(root.data>newNode.data){
+        if(root.left==null){
+            root.left=newNode;
+            return
+        }
+        else{
+            insertNode(root.left,newNode)
+        }
+        
+    }
+    if(root.data<newNode.data){
+        if(root.right==null){
+            root.right=newNode;
+            return
+        }
+        else{
+            insertNode(root.right,newNode)
+        }
+    }
+}
+var searchnode= (value,root)=>{
+if(root.data==value){
+    console.log("Value Found")
+    return true
+}
+ else if(root.data<value){
+    searchnode(value,root.right)
+}
+else if(root.data>value){
+    searchnode(value,root.left)
+
+}} 
+function inorder(root,a){
+    if(root!=null){
+        inorder(root.left,a)
+        a.push(root.data)
+        inorder(root.right,a)
+    }
+    return a
+}
+function mergearray(a1,a2){
+     var a=[]
+     var i=0
+     var j=0
+     console.log(a,i,j,a1,a2)
+     console.log("a1 length",a1.length)
+     console.log("a2 length",a2.length)
+
+
+    while(i<a1.length && j<a2.length){
+         console.log("ENtered")
+         if(a1[i]<a2[j]){
+             console.log(a1[i],a2[j],"a1 I increased")
+             a.push(a1[i])
+             i++
+         }
+         else if(a2[j]<a1[i]){
+            console.log("a2 J increased") 
+            a.push(a2[j])
+             j++
+         }
+    }
+     while(i<a1.length){
+         a.push(a1[i])
+         i++
+     }
+     while(j<a2.length){
+      console.log("sadsadsa")
+         a.push(a2[j])
+          j++
+     }
+     return a
+}
+var root1=new node(9090)
+var s1=root1
+var n1=new node(113)
+var n2=new node(9999)
+var n3=new node(111)
+var n4=new node(84254)
+insertNode(root1,n1)
+insertNode(root1,n2)
+insertNode(root1,n3)
+insertNode(root1,n4)
+var root2=new node(90)
+var s2=root2
+var n5=new node(11)
+var n6=new node(99)
+var n7=new node(1)
+var n8=new node(4254)
+insertNode(root2,n5)
+insertNode(root2,n6)
+insertNode(root2,n7)
+insertNode(root2,n8)
+
+a1=inorder(root1,a1)
+a2=inorder(root2,a2)
+
+//preorderiteration(root)
+result=mergearray(a1,a2)
+console.log("Result is",result)
+</script>
+</body>
+</html>

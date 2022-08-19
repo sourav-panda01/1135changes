@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<head>
+</head>
+<body>
+<form onsubmit="func(event)">
+<label>Choose Expense Amount:</label>
+<input id ="1" type="text">
+<label>Choose Description:</label>
+<input id ="2" type="text">
+<label>Choose a category:</label>
+<select id="3">
+    <option value="Movie">Movie</option>
+    <option value="food">Food</option>
+    <option value="rent">Rent</option>
+    <option value="petrol">Travel</option>
+</select>
+<input type="submit" value="submit">
+</form>
+<div id="div1"></div>
+<script>
+    var i,s,e,io,so,eo;
+    function func(e){
+        e.preventDefault();
+        i=document.getElementById("1").value;
+        s=document.getElementById("2").value;
+        e = document.getElementById("3").value;
+        console.log(i,s,e);
+        localStorage.setItem("expense",i)
+        localStorage.setItem("description",s)
+        localStorage.setItem("category",e)
+        io=localStorage.getItem("expense")
+        so=localStorage.getItem("description")
+        eo=localStorage.getItem("category")
+        console.log(io,so,eo,)
+
+        const para = document.createElement("p");
+        const node = document.createTextNode(io+"  "+so+"  "+eo);
+        para.appendChild(node);
+        const element = document.getElementById("div1");
+        element.appendChild(para);
+
+        const btn=document.createElement("button");
+        const btntext=document.createTextNode("Edit");
+        btn.appendChild(btntext);
+        para.appendChild(btn);
+
+        btn.setAttribute("id",5);
+        var clickbtn=document.getElementById("5");
+        clickbtn.onclick=getelement();
+        function getelement(){
+            console.log("Hello")
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            
+            const para = document.createElement("p");
+            const node = document.createTextNode(io+"  "+so+"  "+eo);
+            para.appendChild(node);
+            const element = document.getElementById("div1");
+            element.appendChild(para);
+
+        });
+    }
+</script>
+</body>
+</html>
